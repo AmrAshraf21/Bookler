@@ -6,7 +6,7 @@ import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import {  NavLink, useNavigate } from "react-router-dom";
 import { logout } from "../../store/authSlice";
 
 const Sidebar = () => {
