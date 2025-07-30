@@ -93,7 +93,7 @@ const MyBookingPage = () => {
 								<Paper key={index} elevation={3} sx={{ p: 3, borderRadius: 3 }}>
 									<Box display="flex" gap={3}>
 										{/* Hotel Image */}
-										<Avatar src={booking.hotel.images.main} variant="rounded" sx={{ width: 150, height: 150 }} />
+										<Avatar src={booking.hotel.images.main} variant="rounded" sx={{ width: 200, height: 150 }} />
 
 										{/* Booking Details */}
 										<Box flex={1}>
