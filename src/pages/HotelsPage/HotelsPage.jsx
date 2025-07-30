@@ -145,7 +145,7 @@ export const HotelsPage = () => {
 
 									<Box display="flex" my={2} flexWrap="wrap" alignItems="center" gap={1}>
 										{hotel.amenities.map((item) => (
-											<Typography variant="body" sx={{ backgroundColor: "#ccc", p: 1, borderRadius: 2 }}>
+											<Typography key={item} variant="body" sx={{ backgroundColor: "#ccc", p: 1, borderRadius: 2 }}>
 												{item}
 											</Typography>
 										))}

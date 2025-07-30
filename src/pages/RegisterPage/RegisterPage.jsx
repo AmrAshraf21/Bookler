@@ -38,8 +38,8 @@ function RegisterPage() {
 					sx={{
 						display: "flex",
 						justifyContent: "space-between",
-						// backgroundColor: "#f5f5f5",
-						backgroundColor: "#0a369434",
+						
+						
 						borderRadius: "20px",
 					}}>
 					{/* Left Side (Form) */}
