@@ -21,11 +21,15 @@ import HotelIcon from "@mui/icons-material/Hotel";
 import VillaIcon from "@mui/icons-material/Villa";
 import { NavLink, useNavigate } from "react-router-dom";
 import bg from "../../assets/images/WhatsApp Image 2025-07-17 at 6.02.21 PM.jpeg";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../store/authSlice";
 
 const Navbar = () => {
 	const navigate = useNavigate();
+	const dispatch = useDispatch();
+
 	const { isLoggedIn } = useSelector((state) => state.auth);
+
 
 	const [anchorEl, setAnchorEl] = useState(null);
 	const open = Boolean(anchorEl);
@@ -40,6 +44,7 @@ const Navbar = () => {
 	};
 
 	const handleLogout = () => {
+		dispatch(logout())
 		handleClose();
 	};
 	return (
