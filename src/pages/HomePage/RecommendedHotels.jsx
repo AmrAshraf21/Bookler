@@ -141,12 +141,7 @@ const RecommendedHotels = () => {
 					</div>
 				))}
 			</Slider>
-			<style>{`
-		.custom-slick-slider .slick-track {
-		  padding-left: 0 !important;
-		  padding-right: 0 !important;
-		}
-	  `}</style>
+			
 		</div>
 	);
 };

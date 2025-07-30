@@ -8,8 +8,6 @@ import { DatePicker } from "@mui/x-date-pickers";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 
-const COUNTRIES = ["Egypt", "United States", "Greece", "Morocco"];
-
 export const SearchInput = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();

@@ -1,4 +1,3 @@
-// components/Navbar.jsx
 import React, { useState } from "react";
 import {
 	AppBar,
@@ -31,11 +30,7 @@ const Navbar = () => {
 	const [anchorEl, setAnchorEl] = useState(null);
 	const open = Boolean(anchorEl);
 
-	
-		const { name } = JSON.parse(localStorage.getItem("auth"))?.user || '';
-
-	
-	
+	const { name } = JSON.parse(localStorage.getItem("auth"))?.user || "";
 
 	const handleOpen = (event) => {
 		setAnchorEl(event.currentTarget);
@@ -108,7 +103,9 @@ const Navbar = () => {
 						<Tooltip title="Open settings">
 							<IconButton onClick={handleOpen} sx={{ p: 0 }}>
 								<Avatar alt="User Profile" src="https://i.pravatar.cc/40" />
-								<Typography ml={1} sx={{color:'white'}} variant="body1">Hello, {name}</Typography>
+								<Typography ml={1} sx={{ color: "white" }} variant="body1">
+									Hello, {name}
+								</Typography>
 							</IconButton>
 						</Tooltip>
 						<Menu
@@ -123,7 +120,7 @@ const Navbar = () => {
 									minWidth: 180,
 								},
 							}}>
-							<MenuItem onClick={()=>navigate('/my-booking')}>My Profile</MenuItem>
+							<MenuItem onClick={() => navigate("/my-booking")}>My Profile</MenuItem>
 							<MenuItem onClick={() => alert("Settings")}>Settings</MenuItem>
 							<MenuItem onClick={handleLogout}>Logout</MenuItem>
 						</Menu>
@@ -132,8 +129,9 @@ const Navbar = () => {
 			</Toolbar>
 			<Stack direction="row" mt={8} ml={10} spacing={4}>
 				<List>
-					<ListItem sx={{ flexDirection: "column", alignItems: "center", py: 0 }}>
+					<ListItem sx={{ flexDirection: "column", alignItems: "center", py: 0, '&:hover':{backgroundColor:'#0a6ada',borderRadius:5} }}>
 						<NavLink
+						
 							to="/hotels"
 							style={({ isActive }) => ({
 								color: "white",
@@ -144,12 +142,12 @@ const Navbar = () => {
 								fontWeight: isActive ? "bold" : "normal",
 							})}>
 							<HotelIcon sx={{ fontSize: 40 }} />
-							<ListItemText primary="HOTELS" primaryTypographyProps={{ align: "center" }} />
+							<ListItemText  primary="HOTELS" primaryTypographyProps={{ align: "center" }} />
 						</NavLink>
 					</ListItem>
 				</List>
 				<List>
-					<ListItem sx={{ flexDirection: "column", alignItems: "center", py: 0 }}>
+					<ListItem sx={{ flexDirection: "column", alignItems: "center", py: 0,'&:hover':{backgroundColor:'#0a6ada',borderRadius:5} }}>
 						<NavLink
 							to="villa"
 							style={({ isActive }) => ({
@@ -166,7 +164,7 @@ const Navbar = () => {
 					</ListItem>
 				</List>
 				<List>
-					<ListItem sx={{ flexDirection: "column", alignItems: "center", py: 0 }}>
+					<ListItem sx={{ flexDirection: "column", alignItems: "center", py: 0 ,'&:hover':{backgroundColor:'#0a6ada',borderRadius:5} }}>
 						<NavLink
 							to="Taxi"
 							style={({ isActive }) => ({
@@ -183,7 +181,7 @@ const Navbar = () => {
 					</ListItem>
 				</List>
 				<List>
-					<ListItem sx={{ flexDirection: "column", alignItems: "center", py: 0 }}>
+					<ListItem sx={{ flexDirection: "column", alignItems: "center", py: 0 , '&:hover':{backgroundColor:'#0a6ada',borderRadius:5} }}>
 						<NavLink
 							to="flights"
 							style={({ isActive }) => ({

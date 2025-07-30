@@ -48,7 +48,7 @@ const BookNowPage = () => {
 	});
 	const navigate = useNavigate();
 	const { id } = useParams();
-	const { getAllHotels, loading } = useSelector((state) => state.hotels);
+	const { getAllHotels, loading,availableCountries } = useSelector((state) => state.hotels);
 	const hotel = getAllHotels.find((h) => String(h.id) === id);
 
 	// Form state
@@ -105,61 +105,57 @@ const BookNowPage = () => {
 				{/* Progress Bar */}
 				<Box sx={{ mb: 3 }}>
 					<Paper elevation={3} sx={{ p: 2, borderRadius: 4 }}>
-						<Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+						<Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
 							<CircularProgress size={20} sx={{ mr: 2 }} />
 							<Typography variant="h6" color="primary">
 								Loading Booking Details...
 							</Typography>
 						</Box>
-						<LinearProgress 
-							variant="indeterminate" 
-							color="primary" 
-							sx={{ height: 4, borderRadius: 2 }}
-						/>
+						<LinearProgress variant="indeterminate" color="primary" sx={{ height: 4, borderRadius: 2 }} />
 					</Paper>
 				</Box>
 
-				{/* Skeleton Loading */}
+				
 				<Container maxWidth>
 					<Box display="flex" gap={4} mt={2}>
-						{/* Booking Form Skeleton */}
+				
 						<Box flex={8}>
 							<Paper elevation={15} sx={{ p: 3, borderRadius: 4 }}>
 								<Skeleton variant="text" width="40%" height={32} sx={{ mb: 3 }} />
-								
+
 								{/* Form Fields Skeleton */}
 								<Box display="flex" gap={2} mb={3}>
 									<Skeleton variant="rectangular" width={120} height={56} />
 									<Skeleton variant="rectangular" width="100%" height={56} />
 								</Box>
-								
+
 								<Box display="flex" gap={2} mb={3}>
 									<Skeleton variant="rectangular" width="100%" height={56} />
 									<Skeleton variant="rectangular" width="100%" height={56} />
 								</Box>
-								
+
 								<Skeleton variant="rectangular" width="100%" height={56} sx={{ mb: 3 }} />
 								<Skeleton variant="rectangular" width="100%" height={56} sx={{ mb: 3 }} />
 								<Skeleton variant="rectangular" width="100%" height={56} sx={{ mb: 3 }} />
-								
-								{/* Date Pickers Skeleton */}
+
+						
 								<Box display="flex" gap={2} mb={3}>
 									<Skeleton variant="rectangular" width="100%" height={56} />
 									<Skeleton variant="rectangular" width="100%" height={56} />
 								</Box>
-								
+
 								<Skeleton variant="rectangular" width="100%" height={56} sx={{ mb: 3 }} />
 								<Skeleton variant="rectangular" width="100%" height={56} sx={{ mb: 3 }} />
 								<Skeleton variant="rectangular" width="100%" height={56} sx={{ mb: 3 }} />
-								
-								{/* Submit Button Skeleton */}
+
+						
 								<Skeleton variant="rectangular" width="100%" height={48} sx={{ borderRadius: 2 }} />
 							</Paper>
 						</Box>
 
-						{/* Booking Summary Skeleton */}
+						
 						<Box flex={4}>
-							<Paper elevation={15} sx={{ p: 3, borderRadius: 4, height: 'fit-content' }}>
+							<Paper elevation={15} sx={{ p: 3, borderRadius: 4, height: "fit-content" }}>
 								<Skeleton variant="text" width="60%" height={32} sx={{ mb: 2 }} />
 								<Skeleton variant="rectangular" width="100%" height={200} sx={{ borderRadius: 2, mb: 2 }} />
 								<Skeleton variant="text" width="100%" height={20} sx={{ mb: 1 }} />
@@ -182,7 +178,7 @@ const BookNowPage = () => {
 		);
 	}
 
-	const countries = ["Egypt", "United States", "Germany", "France"];
+	
 
 	const cardRegex = /^[0-9]{16}$/;
 	const cvvRegex = /^[0-9]{3,4}$/;
@@ -284,7 +280,7 @@ const BookNowPage = () => {
 										label="Country"
 										defaultValue={user?.country || ""}
 										{...register("country", { required: "Country is required" })}>
-										{countries.map((country) => (
+										{availableCountries.map((country) => (
 											<MenuItem key={country} value={country}>
 												{country}
 											</MenuItem>
@@ -376,7 +372,7 @@ const BookNowPage = () => {
 
 					{/* Booking Summary (30% width) */}
 					<Box flex={2}>
-						<Paper elevation={3} sx={{ p: 2, borderRadius: 4, position: "sticky", top: 20 }}>
+						<Paper elevation={8} sx={{ p: 2, borderRadius: 4, position: "sticky" }}>
 							<Typography variant="h6" fontWeight="bold" mb={2}>
 								Your Booking Summary
 							</Typography>

@@ -6,7 +6,7 @@ import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useDispatch, useSelector } from "react-redux";
-import {  NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { logout } from "../../store/authSlice";
 
 const Sidebar = () => {
@@ -21,15 +21,14 @@ const Sidebar = () => {
 		<Box
 			sx={{
 				width: open ? 240 : 64,
-				height:'80vh',
-				
-				
+				height: "80vh",
+
 				background: "linear-gradient(to bottom, #0072ff, #00c6ff)",
 				color: "#fff",
 				borderRadius: "0 0 16px 16px",
 				boxShadow: 3,
 				p: 2,
-				
+
 				position: "sticky",
 				display: "flex",
 				flexDirection: "column",
@@ -50,36 +49,65 @@ const Sidebar = () => {
 				</Box>
 
 				<List>
-				<NavLink to='/' style={{textDecoration:'none'}}>
-
-					<ListItem component='button'  sx={{ cursor:'pointer',backgroundColor:'transparent',border:'none' ,color:'white',justifyContent: open ? "flex-start" : "center" }}>
-						<ListItemIcon sx={{ color: "#fff", minWidth: 0, justifyContent: "center" }}>
-							<HomeIcon />
-						</ListItemIcon>
-						{open && <ListItemText primary="Home" />}
-					</ListItem>
-				</NavLink>
-					
-					{isLoggedIn && (
-						<NavLink to='my-booking' style={{textDecoration:'none'}}>
-
-						<ListItem  sx={{ cursor:'pointer',backgroundColor:'transparent',border:'none' ,color:'white',justifyContent: open ? "flex-start" : "center" }}>
+					<NavLink to="/" style={{ textDecoration: "none" }}>
+						<ListItem
+							component="button"
+							sx={{
+								cursor: "pointer",
+								backgroundColor: "transparent",
+								border: "none",
+								color: "white",
+								justifyContent: open ? "flex-start" : "center",
+							}}>
 							<ListItemIcon sx={{ color: "#fff", minWidth: 0, justifyContent: "center" }}>
-								<MenuBookIcon />
+								<HomeIcon />
 							</ListItemIcon>
-							{open && <ListItemText primary="My Bookings" />}
+							{open && <ListItemText primary="Home" />}
 						</ListItem>
+					</NavLink>
+
+					{isLoggedIn && (
+						<NavLink to="my-booking" style={{ textDecoration: "none" }}>
+							<ListItem
+								sx={{
+									cursor: "pointer",
+									backgroundColor: "transparent",
+									border: "none",
+									color: "white",
+									justifyContent: open ? "flex-start" : "center",
+								}}>
+								<ListItemIcon sx={{ color: "#fff", minWidth: 0, justifyContent: "center" }}>
+									<MenuBookIcon />
+								</ListItemIcon>
+								{open && <ListItemText primary="My Bookings" />}
+							</ListItem>
 						</NavLink>
 					)}
 
-					<ListItem component='button'  sx={{ cursor:'pointer',backgroundColor:'transparent',border:'none' ,color:'white',justifyContent: open ? "flex-start" : "center" }}>
+					<ListItem
+						component="button"
+						sx={{
+							cursor: "pointer",
+							backgroundColor: "transparent",
+							border: "none",
+							color: "white",
+							justifyContent: open ? "flex-start" : "center",
+						}}>
 						<ListItemIcon sx={{ color: "#fff", minWidth: 0, justifyContent: "center" }}>
 							<TravelExploreIcon />
 						</ListItemIcon>
 						{open && <ListItemText primary="Explore" />}
 					</ListItem>
 
-					<ListItem component='button'  sx={{ cursor:'pointer',backgroundColor:'transparent',border:'none' ,color:'white',justifyContent: open ? "flex-start" : "center" }}>
+					<ListItem
+						component="button"
+						sx={{
+							cursor: "pointer",
+							backgroundColor: "transparent",
+							border: "none",
+							color: "white",
+							justifyContent: open ? "flex-start" : "center",
+						}}>
 						<ListItemIcon sx={{ color: "#fff", minWidth: 0, justifyContent: "center" }}>
 							<SupportAgentIcon />
 						</ListItemIcon>
@@ -94,9 +122,8 @@ const Sidebar = () => {
 					{!isLoggedIn ? (
 						<Button
 							variant="outlined"
-							onClick={()=>navigate('/register')}
+							onClick={() => navigate("/register")}
 							sx={{
-								
 								color: "#ff1744",
 								borderColor: "#ff1744",
 								borderRadius: "20px",
@@ -114,7 +141,7 @@ const Sidebar = () => {
 					) : (
 						<Button
 							variant="outlined"
-							onClick={()=>dispatch(logout())}
+							onClick={() => dispatch(logout())}
 							sx={{
 								color: "#fff",
 								borderColor: "#fff",

@@ -35,7 +35,7 @@ export const registerUser = createAsyncThunk("auth/registerUser", async (userDat
 
 export const loginUser = createAsyncThunk("auth/loginUser", async (loginData, { rejectWithValue }) => {
 	try {
-		// Assuming json-server, so we fetch users and check credentials client-side
+		
 		const response = await axiosInter.get("users", {
 			params: { email: loginData.email },
 		});

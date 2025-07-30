@@ -6,7 +6,7 @@ import authReducer from "./authSlice";
 import hotel from "./hotelSlice";
 
 const persistedHotelsReducer = persistReducer(
-	{ ...persistConfig, key: "hotels", whitelist: undefined }, // only persist hotels slice here
+	{ ...persistConfig, key: "hotels", whitelist: undefined }, 
 	hotel
 );
 

@@ -7,7 +7,7 @@ function BestOffers() {
 	const { bestOffers, loading, error } = useSelector((state) => state.hotels);
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
-	console.log(bestOffers);
+	
 
 	useEffect(() => {
 		dispatch(fetchBestOffersHotels());
@@ -16,7 +16,7 @@ function BestOffers() {
 	if (loading) {
 		return (
 			<Box sx={{ mb: 4 }}>
-				{/* Progress Bar */}
+		
 				<Box sx={{ mb: 3 }}>
 					<Paper elevation={3} sx={{ p: 2, borderRadius: 4 }}>
 						<Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
@@ -33,7 +33,7 @@ function BestOffers() {
 					Best Offers
 				</Typography>
 
-				{/* Skeleton Loading */}
+			
 				<Grid container spacing={2} display="flex" justifyContent="space-between">
 					{[1, 2, 3, 4].map((idx) => (
 						<Grid component="cite" xs={12} sm={6} md={3} lg={3} key={idx}>

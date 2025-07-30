@@ -14,7 +14,7 @@ const SearchPage = () => {
 	if (loading && filteredHotels.length === 0) {
 		return (
 			<Container maxWidth sx={{ py: 1 }}>
-				{/* Progress Bar */}
+				
 				<Box sx={{ mb: 3 }}>
 					<Paper elevation={3} sx={{ p: 2, borderRadius: 4 }}>
 						<Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
@@ -29,7 +29,7 @@ const SearchPage = () => {
 
 				<SearchInput />
 
-				{/* Skeleton Loading */}
+				
 				<Grid container sx={{ display: "flex", justifyContent: "center", alignItems: "center" }} spacing={4}>
 					{[1, 2, 3, 4, 5, 6].map((idx) => (
 						<Grid item xs={12} sm={6} md={4} lg={3} key={idx}>

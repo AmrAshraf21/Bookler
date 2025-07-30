@@ -49,16 +49,16 @@ export const HotelDetails = () => {
 					</Paper>
 				</Box>
 
-				{/* Skeleton Loading */}
+				
 				<Paper elevation={3} sx={{ p: 2, borderRadius: 4 }}>
-					{/* Hotel Name Skeleton */}
+				
 					<Skeleton variant="text" width="60%" height={48} sx={{ mb: 2 }} />
 
 					<Box display="flex" flexDirection={{ xs: "column", md: "row" }} alignItems="stretch" gap={4}>
-						{/* Image Gallery Skeleton */}
+			
 						<Box flex={1} sx={{ position: "relative", height: 500, maxWidth: 800 }}>
 							<Skeleton variant="rectangular" width="100%" height="100%" sx={{ borderRadius: 2 }} />
-							{/* Thumbnail skeletons */}
+			
 							<Box
 								display="flex"
 								justifyContent="center"
@@ -278,7 +278,7 @@ export const HotelDetails = () => {
 
 							<Box display="flex" flexWrap="wrap" gap={2} justifyContent="flex-start">
 								{hotel.amenities.map((e, idx) => {
-									// Map amenity string to icon
+									
 									const amenity = e.toLowerCase();
 									const iconMap = {
 										wifi: <WifiIcon sx={{ color: "#3c6097", mr: 1 }} />,
